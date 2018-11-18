@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点击复制内容移动端全兼容(专治各种移动端浏览器)</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background: #fff;
+        }
+        button{
+            width:100px;
+            height:45px;
+        }
+    </style>
+</head>
+<body>
+	
+	<button id="copy">复制链接</button>
+
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="jquery.copy.js"></script>
+    <script>
+        $(function(){
+            //单页面一个复制
+            $.copy({
+                imgUrl:"success-tips.png", //分享图标地址
+                text:"复制成功", //分享提示文案
+                copyUrl:"", //自定义复制链接地址
+                tipTime:2000, //分享提示消失时间
+                copyId:"#copy"//复制按钮id
+            });
+
+            //同页面多个复制链接
+            // var data = [
+            //     {
+            //         "url":"www.baidu.com",
+            //     },
+            //     {
+            //         "url":"www.qq.com",
+            //     },
+            //     {
+            //         "url":"www.163.com",
+            //     }
+            // ];
+            // $.each(data,function(i,item){
+            //     $("body").append('<button id="copy'+i+'">复制链接</button>');
+            //     $.copy({
+            //         imgUrl:"success-tips.png", //分享图标地址
+            //         text:"复制成功", //分享提示文案
+            //         copyUrl:item.url, //自定义复制链接地址
+            //         tipTime:2000, //分享提示消失时间
+            //         copyId:"#copy"+i //复制按钮id
+            //     });
+            // });
+          	
+        });
+    </script>
+</body>
+</html>
