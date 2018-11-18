@@ -1,6 +1,7 @@
 # copy
 移动端js实现点击复制到剪贴板，【真正】兼容所有浏览器uc、qq、微信、手机自带等浏览器
-
+# 原址
+http://www.love85g.com/?p=1528
 # DEMO 
 <pre>
 http://www.love85g.com/majiang/copy/index.html
@@ -65,3 +66,4 @@ var data = [
       });
 });
 </pre>
+
