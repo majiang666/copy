@@ -1,3 +1,4 @@
+![小程序](https://www.love85g.com/wp-content/uploads/2018/12/xcx.jpg)
 # copy
 移动端js实现点击复制到剪贴板，【真正】兼容所有浏览器uc、qq、微信、手机自带等浏览器
 
