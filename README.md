@@ -58,7 +58,7 @@ var data = [
     }
     ];
  $.each(data,function(i,item){
-     $("body").append('<button id="copy'+i+'">复制链接</button>');
+     # $("body").append('<button id="copy'+i+'">复制链接</button>');
      $.copy({
          imgUrl:"success-tips.png", //分享图标地址
          text:"复制成功", //分享提示文案
