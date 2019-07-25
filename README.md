@@ -1,7 +1,7 @@
 ![小程序](https://www.love85g.com/wp-content/uploads/2018/12/xcx.jpg)
 
 ## 20190716更新npm安装
-[react-to-copy](https://www.npmjs.com/package/react-to-copy)
+[react-to-copy](https://www.npmjs.com/package/react-to-copy)  
 [vue-to-copy](https://www.npmjs.com/package/vue-to-copy)
 
 # copy
