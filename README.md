@@ -7,11 +7,9 @@
 # copy
 移动端js实现点击复制到剪贴板，【真正】兼容所有浏览器uc、qq、微信、手机自带等浏览器  
 http://www.love85g.com/?p=1528
-
+[欢迎反馈问题及建议](https://github.com/majiang666/copy/issues)
 # DEMO 
-<pre>
-http://www.love85g.com/majiang/copy/index.html
-</pre>
+[demo](http://www.love85g.com/majiang/copy/index.html)  
 
 前言：在移动端上经常会遇到这样的需求，第一种就是点击复制当前页面的链接，第二种就是类似卡券的功能，需要复制密码等，之前需求太紧急，基本上都使用了clipboard.js  ,使用方法也很简单：（这种办法也会有很多浏览器及机型是不支持的，只能来做降级处理，提示用户去手动复制，但是假如遇到复制卡券这种隐藏值得时候就有问题了，只能在不支持的时候提示及把值再放一遍，用于手动复制，虽然解决了但是还是不完美。）
 <pre>
@@ -38,38 +36,60 @@ clipboard.on('error', function(e) {
 <pre>
 <script src="http://www.love85g.com/cdn/copy/jquery.copy.min.js"></script>
 </pre>
-# 使用办法：
+
+# 2.0版本API 
+=============== 2.0更新日志 ===============
+1：整合单个和多个复制为一个  
+2：优化承载复制内容box  
+3：废除复制按钮id配置项，转为用户自己定义  
+4：新增是否显示复制成功提示配置项tip  
+5：其他优化  
+  
 <pre>
-$.copy({
-    imgUrl:"success-tips.png", //分享图标地址
-    text:"复制成功", //分享提示文案
-    copyUrl:"", //自定义复制链接地址
-    tipTime:2000, //分享提示消失时间
-    copyId:"#copy"//复制按钮id
-});
+    <button class="copy">复制链接</button>  
+    $(".copy").click(function(){
+        $.copy({
+            imgUrl:"../success-tips.png", //分享图标地址，默认空，tip为false不生效
+            text:"复制成功", //分享提示文案，默认'复制成功'，tip为false不生效
+            tipTime:2000, //分享提示消失时间，默认2000，tip为false不生效
+            content:"复制内容", //自定义复制内容，默认空
+            tip:true //是否显示复制成功提示，默认true
+        });
+    }) 	
+</pre>  
+
+# 1.0版本API   
+<pre>
+    $.copy({
+        imgUrl:"success-tips.png", //分享图标地址
+        text:"复制成功", //分享提示文案
+        copyUrl:"", //自定义复制链接地址
+        tipTime:2000, //分享提示消失时间
+        copyId:"#copy"//复制按钮id
+    });
 </pre>
 # 扩展：（单页面多个复制功能）
 <pre>
-var data = [
-    {
-        "url":"www.baidu.com",
-    },
-    {
-        "url":"www.qq.com",
-    },
-    {
-        "url":"www.163.com",
-    }
-    ];
- $.each(data,function(i,item){
-     # $("body").append('<button id="copy'+i+'">复制链接</button>');
-     $.copy({
-         imgUrl:"success-tips.png", //分享图标地址
-         text:"复制成功", //分享提示文案
-         copyUrl:item.url, //自定义复制链接地址
-         tipTime:2000, //分享提示消失时间
-         copyId:"#copy"+i //复制按钮id
-      });
-});
+    var data = [
+        {
+            "url":"www.baidu.com",
+        },
+        {
+            "url":"www.qq.com",
+        },
+        {
+            "url":"www.163.com",
+        }
+        ];
+    $.each(data,function(i,item){
+        # $("body").append('<button id="copy'+i+'">复制链接</button>');
+        $.copy({
+            imgUrl:"success-tips.png", //分享图标地址
+            text:"复制成功", //分享提示文案
+            copyUrl:item.url, //自定义复制链接地址
+            tipTime:2000, //分享提示消失时间
+            copyId:"#copy"+i //复制按钮id
+        });
+    });
 </pre>
 
