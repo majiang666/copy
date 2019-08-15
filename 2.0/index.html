@@ -25,16 +25,15 @@
     <button class="copy">复制链接</button>
 
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-    <script src="jquery.copy.min.js"></script>
+    <script src="jquery.copy.js"></script>
     <script>
         $(function(){
             $(".copy").click(function(){
                 $.copy({
-                    imgUrl:"../success-tips.png", //分享图标地址，默认空，tip为false不生效
-                    text:"复制成功", //分享提示文案，默认'复制成功'，tip为false不生效
-                    tipTime:2000, //分享提示消失时间，默认2000，tip为false不生效
-                    content:"复制内容", //自定义复制内容，默认空
-                    tip:true //是否显示复制成功提示，默认true
+                    content:"自定义复制内容", //自定义复制内容，默认'请配置复制内容'
+                    callback:function(){ //自定义复制成功回调函数，常用于复制成功提示，不配置callback，则不显示
+                        alert('复制成功');
+                    }
                 });
             }) 	
         });
